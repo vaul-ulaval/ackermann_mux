@@ -70,10 +70,8 @@ namespace ackermann_mux
 // see e.g. https://stackoverflow.com/a/40691657
 constexpr std::chrono::duration<int64_t> AckermannMux::DIAGNOSTICS_PERIOD;
 
-AckermannMux::AckermannMux()
-: Node("ackermann_mux", "",
-    rclcpp::NodeOptions().allow_undeclared_parameters(
-      true).automatically_declare_parameters_from_overrides(true))
+AckermannMux::AckermannMux(const rclcpp::NodeOptions& options)
+: Node("ackermann_mux", "", options)
 {
 }
 
@@ -190,3 +188,6 @@ bool AckermannMux::hasPriority(const VelocityTopicHandle & ackermann)
 }
 
 }  // namespace ackermann_mux
+
+#include "rclcpp_components/register_node_macro.hpp" // NOLINT
+RCLCPP_COMPONENTS_REGISTER_NODE(ackermann_mux::AckermannMux)

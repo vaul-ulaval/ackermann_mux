@@ -19,8 +19,10 @@
   <author email="billyzheng.bz@gmail.com">Hongrui Zheng</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>ament_cmake_auto</build_depend>
 
   <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
   <depend>std_msgs</depend>
   <depend>ackermann_msgs</depend>
   <depend>diagnostic_updater</depend>
