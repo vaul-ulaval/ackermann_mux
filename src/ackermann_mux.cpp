@@ -70,9 +70,11 @@ namespace ackermann_mux
 // see e.g. https://stackoverflow.com/a/40691657
 constexpr std::chrono::duration<int64_t> AckermannMux::DIAGNOSTICS_PERIOD;
 
-AckermannMux::AckermannMux(const rclcpp::NodeOptions& options)
-: Node("ackermann_mux", "", options)
+AckermannMux::AckermannMux(rclcpp::NodeOptions options)
+: Node("ackermann_mux", "", options.allow_undeclared_parameters(
+  true).automatically_declare_parameters_from_overrides(true))
 {
+  init();
 }
 
 void AckermannMux::init()

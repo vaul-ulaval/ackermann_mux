@@ -67,7 +67,7 @@ public:
   using velocity_topic_container = handle_container<VelocityTopicHandle>;
   using lock_topic_container = handle_container<LockTopicHandle>;
 
-  explicit AckermannMux(const rclcpp::NodeOptions& options);
+  explicit AckermannMux(rclcpp::NodeOptions options);
   ~AckermannMux() = default;
 
   void init();
